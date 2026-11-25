@@ -1,11 +1,13 @@
-select COUNT(*) from stg_nps;
-select count(*) from stg_nps where respondido_em is null;
-select * from stg_nps limit 5;
-
 -- =============================================================================
 -- 03_validacao.sql —  Confere se a carga deu certo ANTES de abrir o Power BI
 -- Os números do dashboard têm que bater com estes.
 -- =============================================================================
+
+-- 0) Staging: o CSV foi importado por inteiro?
+--    Esperado: 29 linhas | 0 sem data de resposta
+SELECT COUNT(*) AS linhas_staging FROM stg_nps;
+SELECT COUNT(*) AS sem_data_resposta FROM stg_nps WHERE respondido_em IS NULL;
+SELECT * FROM stg_nps LIMIT 5;
 
 -- 1) Quantas linhas em cada tabela
 SELECT 'fato_nps' AS tabela, COUNT(*) FROM fato_nps
