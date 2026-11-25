@@ -1,0 +1,45 @@
+// =============================================================================
+// medidas_dax.txt — Medidas DAX do dashboard de NPS
+// Crie a tabela Medidas (Página Inicial > Inserir dados > Nome: Medidas > Carregar)
+// e use "Nova medida" para cada bloco abaixo, um de cada vez.
+// Se der erro de sintaxe, troque "," por ";" dentro das funções.
+// Valores esperados (Fev/2025): 29 respostas | 82,8% promotores | 3,4% detratores | NPS 79,3
+// =============================================================================
+
+Total Respostas = COUNTROWS ( fato_nps )
+
+Promotores = SUM ( fato_nps[flag_promotor] )
+
+Neutros = SUM ( fato_nps[flag_neutro] )
+
+Detratores = SUM ( fato_nps[flag_detrator] )
+
+% Promotores = DIVIDE ( [Promotores], [Total Respostas] )
+
+% Neutros = DIVIDE ( [Neutros], [Total Respostas] )
+
+% Detratores = DIVIDE ( [Detratores], [Total Respostas] )
+
+NPS = ( [% Promotores] - [% Detratores] ) * 100
+
+Nota Média = AVERAGE ( fato_nps[nota] )
+
+Zona NPS =
+SWITCH (
+    TRUE (),
+    ISBLANK ( [NPS] ), BLANK (),
+    [NPS] >= 75, "Excelência",
+    [NPS] >= 50, "Qualidade",
+    [NPS] >= 0,  "Aperfeiçoamento",
+    "Crítica"
+)
+
+Mediana Horas Resolução = MEDIAN ( fato_nps[horas_ate_resolucao] )
+
+Título Dashboard =
+VAR mes =
+    CALCULATE ( SELECTEDVALUE ( dim_tempo[nome_mes], "Vários meses" ), fato_nps )
+RETURN
+    "NPS do Atendimento — " & mes & "/2025"
+
+

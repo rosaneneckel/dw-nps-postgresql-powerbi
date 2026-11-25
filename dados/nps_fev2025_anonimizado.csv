@@ -1,0 +1,30 @@
+ticket_id,empresa,contato,analista,equipe,categoria,aberto_em,resolvido_em,respondido_em,nota
+1001,Empresa Alpha,Contato 01,Analista 01,Agentes,Atualização de Dados,2025-02-05 08:38:46,2025-02-05 10:04:11,2025-02-05 10:20:29,10
+1002,Empresa Alpha,Contato 02,Analista 02,Product Owner,Acesso e Usuários,2025-01-27 10:55:08,2025-01-28 11:04:19,2025-02-05 14:50:37,7
+1003,Empresa Alpha,Contato 01,Analista 01,Agentes,Indisponibilidade,2025-02-10 08:24:47,2025-02-10 09:06:43,2025-02-10 09:09:04,10
+1004,Empresa Beta,Contato 03,Analista 02,Product Owner,Relatórios e Registros,2025-02-07 16:50:24,2025-02-11 08:12:15,2025-02-11 08:46:41,10
+1005,Empresa Gama,Contato 04,Analista 03,Product Owner,Relatórios e Registros,2025-02-06 12:07:10,2025-02-10 18:36:00,2025-02-12 10:59:29,8
+1006,Empresa Alpha,Contato 01,Analista 01,Agentes,Atualização de Dados,2025-02-12 10:06:40,2025-02-12 11:04:31,2025-02-12 15:42:11,10
+1007,Empresa Alpha,Contato 01,Analista 01,Agentes,Indisponibilidade,2025-02-04 12:19:29,2025-02-04 15:25:28,2025-02-12 15:42:55,10
+1008,Empresa Alpha,Contato 01,Analista 01,Agentes,Indisponibilidade,2025-02-11 09:02:41,2025-02-11 10:02:57,2025-02-12 15:43:43,10
+1009,Empresa Delta,Contato 05,Analista 02,Product Owner,Regras e Indicadores,2025-02-12 14:24:54,2025-02-13 10:45:32,2025-02-13 10:51:47,10
+1010,Empresa Alpha,Contato 01,Analista 02,Product Owner,Atualização de Dados,2025-02-13 08:04:49,2025-02-13 16:41:39,2025-02-13 17:42:54,10
+1011,Empresa Alpha,Contato 01,Analista 02,Product Owner,Atualização de Dados,2025-02-10 12:11:57,2025-02-13 16:09:02,2025-02-13 17:44:43,10
+1012,Empresa Alpha,Contato 01,Analista 02,Product Owner,Atualização de Dados,2025-02-11 15:55:38,2025-02-13 16:48:07,2025-02-13 17:44:59,10
+1013,Empresa Alpha,Contato 01,Analista 02,Product Owner,Acesso e Usuários,2025-02-14 16:28:12,2025-02-14 16:46:58,2025-02-14 17:08:00,10
+1014,Empresa Epsilon,Contato 06,Analista 03,Product Owner,Relatórios e Registros,2025-02-06 12:27:35,2025-02-11 10:34:27,2025-02-17 11:14:50,10
+1015,Empresa Delta,Contato 05,Analista 02,Product Owner,Regras e Indicadores,2025-02-05 15:50:17,2025-02-18 09:11:42,2025-02-18 10:06:15,10
+1016,Empresa Zeta,Contato 07,Analista 03,Product Owner,Atualização de Dados,2024-12-19 11:38:26,2025-02-18 10:09:28,2025-02-18 12:14:53,9
+1017,Empresa Eta,Contato 08,Analista 03,Product Owner,Atualização de Dados,2025-01-24 10:28:23,2025-02-05 12:20:17,2025-02-19 16:01:00,3
+1018,Empresa Theta,Contato 09,Analista 03,Product Owner,Indisponibilidade,2025-02-19 14:02:32,2025-02-20 11:10:12,2025-02-20 16:11:44,8
+1019,Empresa Alpha,Contato 10,Analista 03,Product Owner,Indisponibilidade,2025-02-19 09:41:40,2025-02-20 11:14:18,2025-02-24 17:11:55,10
+1020,Empresa Alpha,Contato 10,Analista 02,Product Owner,Acesso e Usuários,2025-01-22 09:26:00,2025-01-22 16:58:01,2025-02-24 17:12:10,10
+1021,Empresa Alpha,Contato 10,Analista 03,Product Owner,Acesso e Usuários,2025-01-22 08:32:35,2025-01-22 12:22:06,2025-02-24 17:12:29,10
+1022,Empresa Alpha,Contato 10,Analista 02,Product Owner,Relatórios e Registros,2024-11-04 17:11:49,2025-02-04 08:13:29,2025-02-24 17:48:57,7
+1023,Empresa Iota,Contato 11,Analista 02,Product Owner,Relatórios e Registros,2025-02-21 15:09:36,2025-02-24 15:12:22,2025-02-25 08:35:10,9
+1024,Empresa Gama,Contato 12,Analista 03,Product Owner,Indisponibilidade,2025-02-25 11:50:26,2025-02-25 18:06:36,2025-02-26 08:13:43,10
+1025,Empresa Kappa,Contato 13,Analista 03,Product Owner,Indisponibilidade,2025-02-25 10:26:10,2025-02-25 18:06:56,2025-02-26 08:17:23,9
+1026,Empresa Iota,Contato 14,Analista 02,Product Owner,Regras e Indicadores,2024-08-30 15:04:24,2024-09-05 10:25:33,2025-02-26 15:46:10,10
+1027,Empresa Alpha,Contato 01,Analista 01,Agentes,Atualização de Dados,2025-02-27 08:33:06,2025-02-27 09:28:20,2025-02-27 10:00:23,10
+1028,Empresa Iota,Contato 14,Analista 01,Agentes,Regras e Indicadores,2025-02-15 11:16:44,2025-02-27 09:30:59,2025-02-27 15:37:15,10
+1029,Empresa Lambda,Contato 15,Analista 03,Product Owner,Regras e Indicadores,2025-02-25 15:32:13,2025-02-27 17:28:35,2025-02-27 17:43:59,10
