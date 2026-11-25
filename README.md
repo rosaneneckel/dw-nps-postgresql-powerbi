@@ -78,14 +78,14 @@ CALL sp_carregar_dw();                                   -- desfaz o teste
 
 ## Dashboard
 
-O Power BI se conecta ao PostgreSQL (servidor localhost, banco dw_nps, modo Importar) e lê *7 objetos do banco*:
+O Power BI se conecta ao PostgreSQL (servidor `localhost`, banco `dw_nps`, modo Importar) e lê **7 objetos do banco**:
 
-- as *6 tabelas do modelo estrela* (fato_nps + 5 dimensões), que alimentam a página *Visão Geral* (cartões de NPS, gráficos por empresa, categoria e analista);
-- a *view vw_nps_respostas, que alimenta a página **Detalhes*: uma tabela com uma linha por resposta, já com empresa, contato, analista, categoria e classificação.
+- as **6 tabelas do modelo estrela** (`fato_nps` + 5 dimensões), que alimentam a página **Visão Geral** (cartões de NPS, gráficos por empresa, categoria e analista);
+- a view `vw_nps_respostas`, que alimenta a página **Detalhes**: uma tabela com uma linha por resposta, já com empresa, contato, analista, categoria e classificação.
 
-A página Detalhes usa a view porque ela já faz os 5 JOINs da fato com as dimensões dentro do banco. Assim, o Power BI recebe os dados prontos e a regra de junção fica num lugar só. Já a view vw_nps_por_empresa serve para validar o dashboard: o NPS de cada empresa calculado no banco tem que ser igual ao que aparece no gráfico "NPS por empresa".
+A página Detalhes usa a view porque ela já faz os 5 JOINs da fato com as dimensões dentro do banco. Assim, o Power BI recebe os dados prontos e a regra de junção fica num lugar só. Já a view `vw_nps_por_empresa` serve para validar o dashboard: o NPS de cada empresa calculado no banco tem que ser igual ao que aparece no gráfico "NPS por empresa".
 
-As medidas DAX estão em powerbi/medidas_dax.txt.
+As medidas DAX estão em `powerbi/medidas_dax.txt`.
 
 ![Dashboard](docs/dashboard.png)
 
@@ -95,7 +95,10 @@ Empresas, contatos e atendentes foram trocados por nomes fictícios (`Empresa Al
 
 ## Limitações
 
-Amostra pequena: 29 respostas, e 7 das 11 empresas têm só 1 resposta, então o NPS delas fica em −100, 0 ou 100. Uma empresa concentra 52% das respostas.
+- **Amostra pequena:** 29 respostas, e 7 das 11 empresas têm só 1 resposta, então o NPS delas fica em −100, 0 ou 100. Uma empresa concentra 52% das respostas. O mesmo vale para a comparação entre analistas (7, 10 e 12 respostas).
+- **Recorte fixo de período:** a `sp_carregar_dw()` gera o calendário de 2025 e carrega na fato apenas as respostas de fevereiro/2025. Linhas da staging fora desse mês são ignoradas, e datas fora de 2025 exigiriam ampliar a `dim_tempo`. Para outros períodos, basta ajustar esses dois intervalos na procedure.
+- **Tempos extremos:** alguns chamados antigos foram avaliados semanas ou meses depois (ex.: ticket 1026, ~4.181 h entre resolução e resposta; ticket 1022, ~2.199 h para resolver). Por isso o dashboard usa a **mediana** das horas, e não a média.
+- **Página Detalhes:** a view `vw_nps_respostas` não tem relacionamento com as dimensões no modelo do Power BI, então os filtros da Visão Geral não se aplicam a ela.
 
 ---
 
